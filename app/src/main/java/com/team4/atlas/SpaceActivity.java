@@ -12,6 +12,7 @@ public class SpaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_space);
 
+        /*
         Spinner location_spinner = (Spinner) findViewById(R.id.location_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -19,6 +20,6 @@ public class SpaceActivity extends AppCompatActivity {
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        location_spinner.setAdapter(adapter);
+        location_spinner.setAdapter(adapter); */
     }
 }
