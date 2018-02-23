@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.team4.atlas.FacilityActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Find a Facility"
+        android:textColor="#2D9CDB "
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="#0000"
+        android:src="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/wheelchair_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/lift_image"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/toilet_icon" />
+    <CheckBox
+        android:id="@+id/wheelchair_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/wheelchair_image"
+        app:layout_constraintEnd_toEndOf="@+id/wheelchair_image"
+        app:layout_constraintStart_toStartOf="@+id/wheelchair_image"
+        app:layout_constraintTop_toTopOf="@+id/wheelchair_image" />
+
+    <ImageView
+        android:id="@+id/lift_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/lift_icon" />
+    <CheckBox
+        android:id="@+id/lift_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/lift_image"
+        app:layout_constraintEnd_toEndOf="@+id/lift_image"
+        app:layout_constraintStart_toStartOf="@+id/lift_image"
+        app:layout_constraintTop_toTopOf="@+id/lift_image" />
+
+
+    <ImageView
+        android:id="@+id/powerplug_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/powerplug_icon" />
+    <CheckBox
+        android:id="@+id/powerplug_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/powerplug_image"
+        app:layout_constraintEnd_toEndOf="@+id/powerplug_image"
+        app:layout_constraintStart_toStartOf="@+id/powerplug_image"
+        app:layout_constraintTop_toTopOf="@+id/powerplug_image" />
+
+    <ImageView
+        android:id="@+id/coffee_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/powerplug_image"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/coffee_icon" />
+    <CheckBox
+        android:id="@+id/coffee_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/coffee_image"
+        app:layout_constraintEnd_toEndOf="@+id/coffee_image"
+        app:layout_constraintStart_toStartOf="@+id/coffee_image"
+        app:layout_constraintTop_toTopOf="@+id/coffee_image" />
+
+    <ImageView
+        android:id="@+id/barbeque_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/wheelchair_image"
+        app:layout_constraintTop_toBottomOf="@+id/wheelchair_image"
+        app:srcCompat="@drawable/barbeque_icon" />
+    <CheckBox
+        android:id="@+id/barbeque_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/barbeque_image"
+        app:layout_constraintEnd_toEndOf="@+id/barbeque_image"
+        app:layout_constraintStart_toStartOf="@+id/barbeque_image"
+        app:layout_constraintTop_toTopOf="@+id/barbeque_image" />
+
+    <ImageView
+        android:id="@+id/computer_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/barbeque_image"
+        app:layout_constraintTop_toBottomOf="@+id/lift_image"
+        app:srcCompat="@drawable/computer_icon" />
+    <CheckBox
+        android:id="@+id/computer_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/computer_image"
+        app:layout_constraintEnd_toEndOf="@+id/computer_image"
+        app:layout_constraintStart_toStartOf="@+id/computer_image"
+        app:layout_constraintTop_toTopOf="@+id/computer_image" />
+
+    <ImageView
+        android:id="@+id/printer_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/computer_image"
+        app:layout_constraintTop_toBottomOf="@+id/powerplug_image"
+        app:srcCompat="@drawable/printer_icon" />
+    <CheckBox
+        android:id="@+id/printer_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/printer_image"
+        app:layout_constraintEnd_toEndOf="@+id/printer_image"
+        app:layout_constraintStart_toStartOf="@+id/printer_image"
+        app:layout_constraintTop_toTopOf="@+id/printer_image" />
+
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/printer_image"
+        app:layout_constraintTop_toBottomOf="@+id/coffee_image"
+        app:srcCompat="@drawable/food_icon" />
+    <CheckBox
+        android:id="@+id/food_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/food_image"
+        app:layout_constraintEnd_toEndOf="@+id/food_image"
+        app:layout_constraintStart_toStartOf="@+id/food_image"
+        app:layout_constraintTop_toTopOf="@+id/food_image" />
+
+    <ImageView
+        android:id="@+id/water_fountain_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/computer_image"
+        app:layout_constraintTop_toBottomOf="@+id/computer_image"
+        app:srcCompat="@drawable/water_fountain_icon" />
+    <CheckBox
+        android:id="@+id/water_fountain_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/water_fountain_image"
+        app:layout_constraintEnd_toEndOf="@+id/water_fountain_image"
+        app:layout_constraintStart_toStartOf="@+id/water_fountain_image"
+        app:layout_constraintTop_toTopOf="@+id/water_fountain_image" />
+
+    <ImageView
+        android:id="@+id/toilet_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/water_fountain_image"
+        app:layout_constraintTop_toBottomOf="@+id/printer_image"
+        app:srcCompat="@drawable/toilet_icon" />
+    <CheckBox
+        android:id="@+id/toilet_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/icon_checkbox"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/toilet_image"
+        app:layout_constraintEnd_toEndOf="@+id/toilet_image"
+        app:layout_constraintStart_toStartOf="@+id/toilet_image"
+        app:layout_constraintTop_toTopOf="@+id/toilet_image" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:srcCompat="@drawable/find_button" />
+
+</android.support.constraint.ConstraintLayout>

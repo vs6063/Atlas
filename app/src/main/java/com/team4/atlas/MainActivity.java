@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageButton facilityButton = (ImageButton) findViewById(R.id.facility);
+        facilityButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FacilityActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     void doMySearch(String query) {
