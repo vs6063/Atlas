@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Atlas</string>
     <string name="search_hint">Search Buildings</string>
+
+    <string-array name="location">
+        <item>Near my Current Location</item>
+        <item>Near Custom Marker</item>
+    </string-array>
+    <string-array name="indoor">
+        <item>Indoor</item>
+        <item>Outdoor</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="wheelchair">
+        <item>Wheelchair access off</item>
+        <item>Wheelchair access on</item>
+    </string-array>
 </resources>
