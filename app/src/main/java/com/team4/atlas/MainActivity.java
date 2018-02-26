@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ImageButton spaceButton = (ImageButton) findViewById(R.id.space);
+        spaceButton.bringToFront();
         spaceButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SpaceActivity.class);
@@ -35,12 +36,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageButton facilityButton = (ImageButton) findViewById(R.id.facility);
+        facilityButton.bringToFront();
         facilityButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FacilityActivity.class);
                 startActivity(intent);
             }
         });
+
+        ImageButton scatterPlot = (ImageButton) findViewById(R.id.scatterplot);
+        ImageButton location = (ImageButton) findViewById(R.id.location);
+        scatterPlot.bringToFront();
+        location.bringToFront();
     }
 
     void doMySearch(String query) {
