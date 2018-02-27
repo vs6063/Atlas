@@ -26,7 +26,8 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".SpaceActivity" />
-        <activity android:name=".FacilityActivity"></activity>
+        <activity android:name=".FacilityActivity" />
+        <activity android:name=".BuildingActivity"></activity>
     </application>
 
 </manifest>

@@ -121,27 +121,38 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:fillViewport="true" >
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent">
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fillViewport="true" >
 
-                <LinearLayout
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/tyree_button"
+                        android:layout_width="106dp"
+                        android:layout_height="88dp"
+                        android:layout_marginStart="290dp"
+                        android:layout_marginTop="430dp"
+                        android:text="Button"
+                        android:alpha="0"
+                        app:layout_constraintStart_toStartOf="@+id/unsw_map"
+                        app:layout_constraintTop_toTopOf="@+id/unsw_map" />
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/unsw_map"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        fab:srcCompat="@drawable/unsw_map_compressed" />
-                </LinearLayout>
+                        android:src="@drawable/unsw_map_compressed" />
+                </android.support.constraint.ConstraintLayout>
             </ScrollView>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
     </HorizontalScrollView>
 
 </android.support.constraint.ConstraintLayout>
