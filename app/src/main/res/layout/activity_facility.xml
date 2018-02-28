@@ -39,7 +39,7 @@
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toStartOf="@+id/lift_image"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/toilet_icon" />
+        app:srcCompat="@drawable/wheelchair_icon" />
     <CheckBox
         android:id="@+id/wheelchair_icon"
         android:layout_width="70dp"

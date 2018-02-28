@@ -67,10 +67,11 @@
         android:id="@+id/scatterplot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="8dp"
         android:background="#0000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/space"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/scatter_toggle" />
 
@@ -78,18 +79,19 @@
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
         android:background="#0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/space"
         app:srcCompat="@drawable/location_button" />
 
     <ImageButton
         android:id="@+id/space"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#0000"
@@ -102,11 +104,11 @@
         android:id="@+id/facility"
         android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#0000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         fab:srcCompat="@drawable/facility_button" />
@@ -136,12 +138,12 @@
 
                     <Button
                         android:id="@+id/tyree_button"
-                        android:layout_width="106dp"
-                        android:layout_height="88dp"
-                        android:layout_marginStart="290dp"
-                        android:layout_marginTop="430dp"
-                        android:text="Button"
+                        android:layout_width="82dp"
+                        android:layout_height="62dp"
+                        android:layout_marginStart="220dp"
+                        android:layout_marginTop="325dp"
                         android:alpha="0"
+                        android:text="Button"
                         app:layout_constraintStart_toStartOf="@+id/unsw_map"
                         app:layout_constraintTop_toTopOf="@+id/unsw_map" />
 
