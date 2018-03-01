@@ -217,7 +217,7 @@
                 app:srcCompat="@drawable/expand" />
 
             <HorizontalScrollView
-                android:id="@+id/horizontalScrollView"
+                android:id="@+id/level_map"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="32dp"
@@ -231,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
-                    <ScrollView
+                    <android.support.v4.widget.NestedScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fillViewport="true">
@@ -240,24 +240,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent">
 
-                            <Button
-                                android:id="@+id/tyree_button"
-                                android:layout_width="82dp"
-                                android:layout_height="62dp"
-                                android:layout_marginStart="220dp"
-                                android:layout_marginTop="325dp"
-                                android:alpha="0"
-                                android:text="Button"
-                                app:layout_constraintStart_toStartOf="@+id/unsw_map"
-                                app:layout_constraintTop_toTopOf="@+id/unsw_map" />
-
                             <ImageView
                                 android:id="@+id/unsw_map"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/tyree_level1" />
                         </android.support.constraint.ConstraintLayout>
-                    </ScrollView>
+                    </android.support.v4.widget.NestedScrollView>
                 </android.support.constraint.ConstraintLayout>
             </HorizontalScrollView>
 
@@ -271,7 +260,7 @@
                 android:textColor="#2D9CDB "
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/level_map" />
 
             <ImageView
                 android:id="@+id/imageView7"
