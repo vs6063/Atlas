@@ -45,24 +45,6 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/search" />
 
-    <!--
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="490dp">
-
-        <scrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/unsw_map_small" />
-        </scrollView>
-    </HorizontalScrollView>-->
-
     <ImageButton
         android:id="@+id/scatterplot"
         android:layout_width="wrap_content"
@@ -112,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         fab:srcCompat="@drawable/facility_button" />
-
+    <!--
     <HorizontalScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -156,5 +138,46 @@
             </ScrollView>
         </android.support.constraint.ConstraintLayout>
     </HorizontalScrollView>
+    -->
+    <com.team4.atlas.VScroll
+        android:id="@+id/vScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <com.team4.atlas.HScroll
+            android:id="@+id/hScroll"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/tyree_button"
+                    android:layout_width="82dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="220dp"
+                    android:layout_marginTop="325dp"
+                    android:alpha="0"
+                    app:layout_constraintStart_toStartOf="@+id/unsw_map"
+                    app:layout_constraintTop_toTopOf="@+id/unsw_map" />
+
+                <ImageView
+                    android:id="@+id/unsw_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unsw_map_compressed" />
+            </android.support.constraint.ConstraintLayout>
+        </com.team4.atlas.HScroll>
+    </com.team4.atlas.VScroll>
 
 </android.support.constraint.ConstraintLayout>
