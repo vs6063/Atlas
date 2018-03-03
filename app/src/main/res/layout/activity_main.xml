@@ -5,17 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context="com.team4.atlas.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="65dp"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:background="@drawable/custom_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,9 +51,9 @@
         android:layout_marginBottom="32dp"
         android:layout_marginStart="8dp"
         android:background="#0000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/vScroll"
         app:layout_constraintEnd_toStartOf="@+id/space"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vScroll"
         app:srcCompat="@drawable/scatter_toggle" />
 
     <ImageButton
@@ -64,8 +63,8 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:background="#0000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/vScroll"
+        app:layout_constraintEnd_toEndOf="@id/vScroll"
         app:layout_constraintStart_toEndOf="@+id/space"
         app:srcCompat="@drawable/location_button" />
 
@@ -77,9 +76,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#0000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/vScroll"
+        app:layout_constraintEnd_toEndOf="@id/vScroll"
+        app:layout_constraintStart_toStartOf="@id/vScroll"
         fab:srcCompat="@drawable/space_button" />
 
     <ImageButton
@@ -91,66 +90,18 @@
         android:layout_marginStart="8dp"
         android:background="#0000"
         app:layout_constraintBottom_toTopOf="@+id/space"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vScroll"
+        app:layout_constraintStart_toStartOf="@id/vScroll"
         fab:srcCompat="@drawable/facility_button" />
-    <!--
-    <HorizontalScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:fillViewport="true" >
 
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fillViewport="true" >
-
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/tyree_button"
-                        android:layout_width="82dp"
-                        android:layout_height="62dp"
-                        android:layout_marginStart="220dp"
-                        android:layout_marginTop="325dp"
-                        android:alpha="0"
-                        android:text="Button"
-                        app:layout_constraintStart_toStartOf="@+id/unsw_map"
-                        app:layout_constraintTop_toTopOf="@+id/unsw_map" />
-
-                    <ImageView
-                        android:id="@+id/unsw_map"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/unsw_map_compressed" />
-                </android.support.constraint.ConstraintLayout>
-            </ScrollView>
-        </android.support.constraint.ConstraintLayout>
-    </HorizontalScrollView>
-    -->
     <com.team4.atlas.VScroll
         android:id="@+id/vScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/results_wrapper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.team4.atlas.HScroll
             android:id="@+id/hScroll"
@@ -176,8 +127,92 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/unsw_map_compressed" />
+
             </android.support.constraint.ConstraintLayout>
         </com.team4.atlas.HScroll>
     </com.team4.atlas.VScroll>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/results_wrapper"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@drawable/custom_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Tyree Level 1"
+            android:textColor="#828282"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="Capacity: 76%"
+            android:textColor="#6FCF97"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="8dp"
+            android:text="2 min walk\n"
+            android:textColor="#4F4F4F "
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textdirections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Directions"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintEnd_toStartOf="@+id/directions"
+            app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+        <ImageButton
+            android:id="@+id/directions"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="4dp"
+            android:background="#0000"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/textdirections"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textdirections"
+            fab:srcCompat="@drawable/directions" />
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:background="#0000"
+            app:layout_constraintBottom_toTopOf="@+id/textView19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            fab:srcCompat="@drawable/next" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

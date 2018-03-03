@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 public class SpaceActivity extends AppCompatActivity {
 
+    public static final String SHOW_SPACES = "com.team4.atlas.SHOW_SPACES";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +52,17 @@ public class SpaceActivity extends AppCompatActivity {
         wheelchair_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         wheelchair_spinner.setAdapter(wheelchair_adapter);
-    }
 
+        ImageButton findButton = (ImageButton) findViewById(R.id.find);
+        findButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(SpaceActivity.this, MainActivity.class);
+                intent.putExtra(SHOW_SPACES, true);
+                startActivity(intent);
+            }
+        });
+    }
+    /*
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -97,4 +108,5 @@ public class SpaceActivity extends AppCompatActivity {
                 }
         }
     }
+    */
 }
