@@ -27,6 +27,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -112,12 +113,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
+        ArrayList<String> facilities = intent.getStringArrayListExtra(FacilityActivity.FACILITIES);
         if (intent.getBooleanExtra(SpaceActivity.SHOW_SPACES, false) == true) {
             ConstraintLayout results_wrapper = (ConstraintLayout) findViewById(R.id.results_wrapper);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) results_wrapper.getLayoutParams();
             layoutParams.width = 0;
             layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             results_wrapper.setLayoutParams(layoutParams);
+        } else if (facilities != null && facilities.size() > 0) {
+
         }
 
         ImageButton nextButton = (ImageButton) findViewById(R.id.next);

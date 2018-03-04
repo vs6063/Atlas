@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class BuildingActivity extends AppCompatActivity {
@@ -36,5 +38,14 @@ public class BuildingActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        Spinner level_spinner = (Spinner) findViewById(R.id.level_spinner);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> level_adapter = ArrayAdapter.createFromResource(this,
+                R.array.building_level, R.layout.spinner_item);
+        // Specify the layout to use when the list of choices appears
+        level_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        level_spinner.setAdapter(level_adapter);
     }
 }
