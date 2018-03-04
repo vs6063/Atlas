@@ -233,6 +233,47 @@
             app:layout_constraintTop_toBottomOf="@+id/textView18">
 
 
+            <ImageView
+                android:id="@+id/wheelchair"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                fab:srcCompat="@drawable/wheelchair_icon" />
+
+            <ImageView
+                android:id="@+id/powerplug"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                fab:srcCompat="@drawable/powerplug_icon"
+                tools:layout_editor_absoluteX="66dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <ImageView
+                android:id="@+id/coffee"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                fab:srcCompat="@drawable/coffee_icon"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="17dp" />
+
+            <ImageView
+                android:id="@+id/toilet"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                fab:srcCompat="@drawable/toilet_icon"
+                tools:layout_editor_absoluteX="253dp"
+                tools:layout_editor_absoluteY="20dp" />
+
+            <ImageView
+                android:id="@+id/food"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                fab:srcCompat="@drawable/food_icon"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="148dp" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
