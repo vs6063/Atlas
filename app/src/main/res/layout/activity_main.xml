@@ -135,7 +135,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/results_wrapper"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="1dp"
         android:background="@drawable/custom_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +183,6 @@
             android:id="@+id/space_results"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView18">
@@ -213,7 +212,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
             <ImageButton
-                android:id="@+id/next"
+                android:id="@+id/next_space"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
@@ -225,7 +224,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/facilities_wrapper"
+            android:id="@+id/facilities_results"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -235,45 +234,82 @@
 
             <ImageView
                 android:id="@+id/wheelchair"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="8dp"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 fab:srcCompat="@drawable/wheelchair_icon" />
 
             <ImageView
                 android:id="@+id/powerplug"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                fab:srcCompat="@drawable/powerplug_icon"
-                tools:layout_editor_absoluteX="66dp"
-                tools:layout_editor_absoluteY="16dp" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/wheelchair"
+                app:layout_constraintStart_toEndOf="@+id/wheelchair"
+                app:layout_constraintTop_toTopOf="@+id/wheelchair"
+                fab:srcCompat="@drawable/powerplug_icon" />
 
             <ImageView
                 android:id="@+id/coffee"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                fab:srcCompat="@drawable/coffee_icon"
-                tools:layout_editor_absoluteX="161dp"
-                tools:layout_editor_absoluteY="17dp" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/powerplug"
+                app:layout_constraintStart_toEndOf="@+id/powerplug"
+                app:layout_constraintTop_toTopOf="@+id/powerplug"
+                fab:srcCompat="@drawable/coffee_icon" />
 
             <ImageView
                 android:id="@+id/toilet"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                fab:srcCompat="@drawable/toilet_icon"
-                tools:layout_editor_absoluteX="253dp"
-                tools:layout_editor_absoluteY="20dp" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/food"
+                app:layout_constraintStart_toEndOf="@+id/food"
+                app:layout_constraintTop_toTopOf="@+id/food"
+                fab:srcCompat="@drawable/toilet_icon" />
 
             <ImageView
                 android:id="@+id/food"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                fab:srcCompat="@drawable/food_icon"
-                tools:layout_editor_absoluteX="84dp"
-                tools:layout_editor_absoluteY="148dp" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/coffee"
+                app:layout_constraintStart_toEndOf="@+id/coffee"
+                app:layout_constraintTop_toTopOf="@+id/coffee"
+                fab:srcCompat="@drawable/food_icon" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="8dp"
+                android:text="2 min walk\n"
+                android:textColor="#4F4F4F "
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wheelchair" />
+
+            <ImageButton
+                android:id="@+id/next_facility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:background="#0000"
+                app:layout_constraintBottom_toTopOf="@+id/textView20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wheelchair"
+                app:layout_constraintVertical_bias="0.39999998"
+                fab:srcCompat="@drawable/next" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>

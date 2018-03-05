@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -120,12 +121,48 @@ public class MainActivity extends AppCompatActivity {
             layoutParams.width = 0;
             layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             results_wrapper.setLayoutParams(layoutParams);
+            ConstraintLayout facilities_results = (ConstraintLayout) findViewById(R.id.facilities_results);
+            facilities_results.setVisibility(View.GONE);
         } else if (facilities != null && facilities.size() > 0) {
-
+            boolean showFacilities = false;
+            for (String curr: facilities) {
+                if (curr.equals("wheelchair")) {
+                    showFacilities = true;
+                    break;
+                } else if (curr.equals("powerplug")) {
+                    showFacilities = true;
+                    break;
+                } else if (curr.equals("coffee")) {
+                    showFacilities = true;
+                    break;
+                } else if (curr.equals("food")) {
+                    showFacilities = true;
+                    break;
+                } else if (curr.equals("toilet")) {
+                    showFacilities = true;
+                    break;
+                }
+            }
+            if (showFacilities == true) {
+                ConstraintLayout results_wrapper = (ConstraintLayout) findViewById(R.id.results_wrapper);
+                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) results_wrapper.getLayoutParams();
+                layoutParams.width = 0;
+                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                results_wrapper.setLayoutParams(layoutParams);
+                ConstraintLayout space_results = (ConstraintLayout) findViewById(R.id.space_results);
+                space_results.setVisibility(View.GONE);
+            }
         }
 
-        ImageButton nextButton = (ImageButton) findViewById(R.id.next);
-        nextButton.setOnClickListener(new View.OnClickListener(){
+        ImageButton nextSpaceButton = (ImageButton) findViewById(R.id.next_space);
+        nextSpaceButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton nextFacilityButton = (ImageButton) findViewById(R.id.next_facility);
+        nextFacilityButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
                 startActivity(intent);
