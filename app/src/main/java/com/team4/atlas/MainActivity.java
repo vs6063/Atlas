@@ -1,5 +1,7 @@
 package com.team4.atlas;
 
+import android.animation.LayoutTransition;
+import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.Context;
@@ -8,6 +10,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.media.Image;
+import android.os.Build;
+import android.provider.SyncStateContract;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +19,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.app.Activity;
 import android.os.Bundle;
@@ -39,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView vScroll;
     private HorizontalScrollView hScroll;
 
+    private boolean findToggle;
+    Animation fadeOut;
+    Animation fadeIn;
+    Animation slideUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +59,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        findToggle = true;
+
         vScroll = (ScrollView) findViewById(R.id.vScroll);
         hScroll = (HorizontalScrollView) findViewById(R.id.hScroll);
 
-        ImageButton spaceButton = (ImageButton) findViewById(R.id.space);
+        fadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in_animation);
+        fadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out_animation);
+        slideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
+
+        final ImageButton spaceButton = (ImageButton) findViewById(R.id.space);
         spaceButton.bringToFront();
         spaceButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -59,12 +77,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton facilityButton = (ImageButton) findViewById(R.id.facility);
+        final ImageButton facilityButton = (ImageButton) findViewById(R.id.facility);
         facilityButton.bringToFront();
         facilityButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, FacilityActivity.class);
             startActivity(intent);
+            }
+        });
+
+        spaceButton.setVisibility(View.GONE);
+        facilityButton.setVisibility(View.GONE);
+        ImageButton findButton = (ImageButton) findViewById(R.id.find);
+        findButton.bringToFront();
+        findButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                if (findToggle == false) {
+                    spaceButton.startAnimation(fadeOut);
+                    facilityButton.startAnimation(fadeOut);
+                    spaceButton.setVisibility(View.GONE);
+                    facilityButton.setVisibility(View.GONE);
+                    findToggle = true;
+                } else {
+                    spaceButton.startAnimation(fadeIn);
+                    facilityButton.startAnimation(fadeIn);
+                    spaceButton.setVisibility(View.VISIBLE);
+                    facilityButton.setVisibility(View.VISIBLE);
+                    findToggle = false;
+                }
             }
         });
 
@@ -123,6 +163,10 @@ public class MainActivity extends AppCompatActivity {
             results_wrapper.setLayoutParams(layoutParams);
             ConstraintLayout facilities_results = (ConstraintLayout) findViewById(R.id.facilities_results);
             facilities_results.setVisibility(View.GONE);
+            results_wrapper.startAnimation(slideUp);
+            scatterPlot.startAnimation(slideUp);
+            findButton.startAnimation(slideUp);
+            location.startAnimation(slideUp);
         } else if (facilities != null && facilities.size() > 0) {
             boolean showFacilities = false;
             for (String curr: facilities) {
@@ -151,6 +195,10 @@ public class MainActivity extends AppCompatActivity {
                 results_wrapper.setLayoutParams(layoutParams);
                 ConstraintLayout space_results = (ConstraintLayout) findViewById(R.id.space_results);
                 space_results.setVisibility(View.GONE);
+                results_wrapper.startAnimation(slideUp);
+                scatterPlot.startAnimation(slideUp);
+                findButton.startAnimation(slideUp);
+                location.startAnimation(slideUp);
             }
         }
 
@@ -168,15 +216,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // get intent for search, verify action and get the query
-        /*
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(query);
-        }
-        */
     }
 
     //void doMySearch(String query) {}

@@ -42,7 +42,7 @@ public class BuildingActivity extends AppCompatActivity {
         Spinner level_spinner = (Spinner) findViewById(R.id.level_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> level_adapter = ArrayAdapter.createFromResource(this,
-                R.array.building_level, R.layout.spinner_item);
+                R.array.building_level, R.layout.spinner_item_large);
         // Specify the layout to use when the list of choices appears
         level_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
